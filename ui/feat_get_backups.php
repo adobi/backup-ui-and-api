@@ -79,19 +79,19 @@
     		}
     		else {
     		    $errors[] = 'A backup készítés elindúlt!';
+
+        		$jsonParams = json_encode($params);
+        		
+        		/*
+                $szolgadd = new Table($DB['szolgadd']);
+                $szolgadd->_server = "106";
+                $szolgadd->_funct = 'restore_init';
+                $szolgadd->_param1 = $jsonParams;
+                
+                $szolgadd->insertObj();
+                */
+    		    
     		}
-    		
-    		$jsonParams = json_encode($params);
-    		
-    		//ellenorizni, hogy van e ilyen backup, ha van akkor szolgadd
-    		/*
-            $szolgadd = new Table($DB['szolgadd']);
-            $szolgadd->_server = "106";
-            $szolgadd->_funct = 'restore_init';
-            $szolgadd->_param1 = $jsonParams;
-            
-            $szolgadd->insertObj();
-            */
 		}
 		
 	}
