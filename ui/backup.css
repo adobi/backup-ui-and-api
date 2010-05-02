@@ -1,0 +1,109 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body, html {height: 100%;}
+body { font-size:12px 'Helvetica', 'Arial', 'sans-serif'; background:#E7F1F3; color:#444; text-align:left;}
+h1 { font-size: 1.6em; } 
+h2 { font-size:1.4em; } 
+h3 {font-size:1.2em;}
+a { text-decoration:none; color: #333333; padding:3px 5px;}
+a:hover { text-decoration: underline; }
+h1 a.title {
+    //margin-left:-11px;
+    color:#555;
+    position:relative; 
+    padding-bottom:8px;
+    position:relative; 
+    top:20px; 
+    text-align:center;
+    border-top:2px solid #E7F1F3; 
+    display:inline-block;
+    overflow:hidden;    
+}
+h1 a.type {  
+    width:120px; 
+    padding-bottom:8px;
+    color:#006699; 
+    position:relative; 
+    top:20px; 
+    text-align:center;
+    border-top:2px solid #E7F1F3; 
+    border-bottom: 1px solid #fff;
+    display:inline-block;
+    -moz-border-radius-topleft:5px; 
+    -moz-border-radius-topright:5px;
+    overflow:hidden;
+}
+h1 a.type:active {
+    top:21px;
+}
+
+.selected {
+    top:20px!important;
+    padding-bottom:6px!important;
+    border:2px solid #ccc!important;
+    border-bottom:3px solid #f7f7f7!important;
+    background:#f7f7f7;
+}
+
+#container {  width:975px;overflow:hidden; background:#f7f7f7; padding:10px; border:0px solid #ccc; text-align:left; font-size:1.0em; min-height: 100%;	height: auto !important; height: 100%; margin: 0 auto 0em; }
+
+#header {
+    width:975px; border:2px solid #E7F1F3; border-bottom:2px solid #ccc; border-top:0px; background:#E7F1F3; 
+    margin:-10px 25px 0 -10px; 
+    padding:30px 10px 10px 10px; 
+}
+#sidebar { background:#E7F1F3; width: 150px; margin: 20px 10px 10px -10px; float:left; padding:5px; border:2px solid #DDDDDF; border-left:0px;-moz-border-radius-topright:5px; -moz-border-radius-bottomright:5px;}
+#sidebar ul { list-style-type:none;}
+#sidebar ul li {margin:0 0px 3px 0;}
+#sidebar ul li a { display:block; padding: 5px;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
+#sidebar ul li a:hover {background:#A9014B;color:#fff;text-decoration:none;}
+#sidebar ul li a:active {top:1px;}
+#content {background:#f5f5f5;float: left; border:1px solid #ccc; margin: 20px 10px 10px 10px; padding:5px; width: 750px;-moz-border-radius-topleft:5px; -moz-border-radius-bottomleft:5px;}
+.hidden { display:none; }
+#revisions {background-color: #FF6633; border: 1px solid #FF6633; margin: 10px; padding: 10px 10px;	text-align:left; -moz-border-radius:5px; -webkit-border-radius:5px;	-moz-box-shadow: 0 1px 3px #999;-webkit-box-shadow: 0 1px 3px #999;}
+#revisions a {font-size: 0.9em; color:#fff!important;margin-right: 10px;}
+
+.selected-server {background:#A9014B;color:#fff;ont-weight:bold; text-decoration:none;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
+.selected-revision {text-decoration:underline; font-weight:bold;font-style:italic; }
+
+form {border-top:0px solid #ccc; margin-top:20px;padding:10px;}
+
+form input[type=text] {font-size:18px;padding: 8px 5px;  border:1px solid #cccccc; margin: 0 10px 0 0;}
+form input[type=text]:hover, form input[type=text]:focus {border:1px solid #7F635F;}
+form label {padding: 3px 5px;}
+form p {padding: 10px 0;}
+form input[type=submit] {border:0px; background: #222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x; display: inline-block;padding: 5px 10px 6px;color: #fff;text-decoration: none;font-weight: bold;line-height: 1;-moz-border-radius: 5px;-webkit-border-radius: 5px;-moz-box-shadow: 0 1px 3px #999;-webkit-box-shadow: 0 1px 3px #999;text-shadow: 0 -1px 1px #222;border-bottom: 1px solid #222;position: relative;cursor: pointer;font-size: 14px;padding: 6px 12px 7px;}
+form input[type=submit]:hover { background-color: #111; color: #fff; }
+form input[type=submit]:active { top: 1px; }
+
+#help {
+	width:650px;
+	//margin-left:56px;
+	padding:10px;
+	font-style:italic;
+	background:#B8D30B;
+	font-size:14px;
+	border:1px solid #A8BF0B;
+	-moz-border-radius: 3px;-webkit-border-radius: 3px;
+}
+#help strong {
+    font-style: normal; font-weight: bold;
+}
+#show-help {
+	cursor:pointer;
+}
