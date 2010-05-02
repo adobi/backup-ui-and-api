@@ -44,10 +44,6 @@ h1 a.type {
     border-top:2px solid #E7F1F3; 
     border-bottom: 1px solid #fff;
     display:inline-block;
-    -moz-border-radius-topleft:5px; 
-    -moz-border-radius-topright:5px;
-    -webkit-border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
     overflow:hidden;
 }
 h1 a.type:active {
@@ -60,6 +56,12 @@ h1 a.type:active {
     border:2px solid #ccc!important;
     border-bottom:3px solid #f7f7f7!important;
     background:#f7f7f7;
+    -moz-border-radius-topleft:5px; 
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-topright-radius:5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;    
 }
 
 #container {  
@@ -74,6 +76,8 @@ h1 a.type:active {
     -moz-border-radius-topright:5px;
     -webkit-border-top-left-radius:5px;
     -webkit-border-top-right-radius:5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;        
     text-align:left; 
     font-size:1.0em; 
     min-height: 100%;	height: auto !important; height: 100%; margin: 0 auto 0em; 
@@ -97,20 +101,24 @@ h1 a.type:active {
     -moz-border-radius-bottomright:5px;
     -webkit-border-top-right-radius:5px;
     -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;    
     font-weight:bold;
 }
 #sidebar ul { list-style-type:none;}
 #sidebar ul li {margin:0 0px 3px 0;}
-#sidebar ul li a { display:block; padding: 5px;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
+#sidebar ul li a { display:block; padding: 5px;-moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;}
 #sidebar ul li a:hover {background:#A9014B;color:#fff;text-decoration:none;}
 #sidebar ul li a:active {top:1px;}
 #content {background:#f5f5f5;float: left; border:1px solid #ccc; margin: 20px 10px 10px 10px; padding:5px; width: 750px;
     -moz-border-radius-topleft:5px; -moz-border-radius-bottomleft:5px;
     -webkit-border-top-left-radius:5px;
     -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;    
 }
 .hidden { display:none; }
-#revisions {background-color: #FF6633; border: 1px solid #FF6633; margin: 10px; padding: 10px 10px;	text-align:left; -moz-border-radius:5px; -webkit-border-radius:5px;	-moz-box-shadow: 0 1px 3px #999;-webkit-box-shadow: 0 1px 3px #999;}
+#revisions {background-color: #FF6633; border: 1px solid #FF6633; margin: 10px; padding: 10px 10px;	text-align:left; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;	-moz-box-shadow: 0 1px 3px #999;-webkit-box-shadow: 0 1px 3px #999;}
 #revisions a {font-size: 0.9em; color:#fff!important;margin-right: 10px;}
 
 .selected-server {background:#A9014B;color:#fff;ont-weight:bold; text-decoration:none;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
@@ -122,7 +130,27 @@ form input[type=text] {font-size:18px;padding: 8px 5px;  border:1px solid #ccccc
 form input[type=text]:hover, form input[type=text]:focus {border:1px solid #7F635F;}
 form label {padding: 3px 5px;}
 form p {padding: 10px 0;}
-form input[type=submit] {border:0px; background: #222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x; display: inline-block;padding: 5px 10px 6px;color: #fff;text-decoration: none;font-weight: bold;line-height: 1;-moz-border-radius: 5px;-webkit-border-radius: 5px;-moz-box-shadow: 0 1px 3px #999;-webkit-box-shadow: 0 1px 3px #999;text-shadow: 0 -1px 1px #222;border-bottom: 1px solid #222;position: relative;cursor: pointer;font-size: 14px;padding: 6px 12px 7px;}
+form input[type=submit] {
+    border:0px; 
+    background: #222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x; 
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; 
+    border-radius:5px;
+     -moz-box-shadow: 0 1px 3px #999;
+     -webkit-box-shadow: 0 1px 3px #999;
+     text-shadow: 0 -1px 1px #222;
+     border-bottom: 1px solid #222;
+     position: relative;
+     cursor: pointer;
+     font-size: 14px;
+     padding: 6px 12px 7px;
+}
 form input[type=submit]:hover { background-color: #111; color: #fff; }
 form input[type=submit]:active { top: 1px; }
 
@@ -134,7 +162,7 @@ form input[type=submit]:active { top: 1px; }
 	background:#B8D30B;
 	font-size:14px;
 	border:1px solid #A8BF0B;
-	-moz-border-radius: 3px;-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;
 }
 #help strong {
     font-style: normal; font-weight: bold;
