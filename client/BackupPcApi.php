@@ -13,7 +13,7 @@
             
             $uri = array();
             foreach($params as $name=>$value) {
-                $uri[] = $name.'='.$value;
+                $uri[] = $name.'='.urlencode($value);
             }
             $uri = join('&', $uri);
             

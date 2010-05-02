@@ -46,13 +46,18 @@
                 echo $backupPc->toJson(array('error'=>'Nincs ilyen revizió'));
                 break;
             }
-            $backup = $_GET['backup'];
+            $backup = urldecode($_GET['backup']);
             //echo $backup; die;
             if(empty($backup)) {
                 echo $backupPc->toJson(array('error'=>'Nincs backup megadva'));
                 break;
             }
-            echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup.'.sql.gz'));
+            if($type == 'mysql') {
+                echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup.'.sql.gz'));
+            }
+            else {
+                echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup));
+            }
             break;
         default:
             echo 0;
