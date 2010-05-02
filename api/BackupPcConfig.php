@@ -7,8 +7,8 @@
         public function __construct(array $config = array()) {
             
             $defaults = array(
-                'path_to_tarhely_backups' => 'var/lib/backuppc/pc/',
-                'path_to_mysql_backups'   => 'var/lib/backuppc/sqlbackup/',
+                'path_to_tarhely_backups' => '../tests/var/lib/backuppc/pc/',
+                'path_to_mysql_backups'   => '../tests/var/lib/backuppc/sqlbackup/',
                 'backups_file_name'       => 'backups'    
             );
             
