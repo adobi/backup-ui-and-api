@@ -20,7 +20,7 @@ body { font-size:12px 'Helvetica', 'Arial', 'sans-serif'; background:#E7F1F3; co
 h1 { font-size: 1.6em; } 
 h2 { font-size:1.4em; } 
 h3 {font-size:1.2em;}
-a { text-decoration:none; color: #333333; padding:3px 5px;}
+a { text-decoration:none; color: #006699; padding:3px 5px;}
 a:hover { text-decoration: underline; }
 h1 a.title {
     //margin-left:-11px;

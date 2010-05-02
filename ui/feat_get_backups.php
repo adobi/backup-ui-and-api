@@ -201,12 +201,18 @@
 				    return true;
 				});
 				
-				if(jQuery.trim($('#errors').html()) !== '') {
-				    $('#errors').slideDown(function() {
+				var errors = $('#errors');
+				if(jQuery.trim(errors.html()) !== '') {
+				   errors.slideDown(function() {
     				    setTimeout(function() {
-    				        $('#errors').slideUp();
+    				        errors.slideUp();
     				    }, 3000);
 				    });
+				}
+				
+				var content = $('#content')
+				if(jQuery.trim(content.html()) === '') {
+				    content.hide();
 				}
 			});		
 		
