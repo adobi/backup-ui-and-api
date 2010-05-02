@@ -136,6 +136,7 @@
                     break;
                 default:
             }
+            
             $finder = new BackupPcFinder($directory);
                     
             return array('result' => $finder->exists()); 

@@ -17,7 +17,7 @@
             }
             $uri = join('&', $uri);
             
-            //echo file_get_contents($this->config['api_url'] . '?' . $uri); die;
+            //echo $this->config['api_url'] . '?' . $uri;
             return 
                 json_decode(
                     file_get_contents(

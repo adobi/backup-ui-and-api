@@ -18,19 +18,41 @@
         case 'revisions-list':
             
             $server  = $_GET['server'];
-            if(!in_array($server, $backupPc->getServersList())) echo 0;
-            
+            if(!in_array($server, $backupPc->getServersList())) {
+                echo $backupPc->toJson(array('error'=>'Nincs a szerverről backup'));
+                break;
+            }
             echo $backupPc->toJson($backupPc->getRevisionsList($server));
             break;
         case 'backup-exists':
             
             $server  = $_GET['server'];
-            if(!in_array($server, $backupPc->getServersList())) echo 0;
-            
+            if(!in_array($server, $backupPc->getServersList())) {
+                echo $backupPc->toJson(array('error'=>'Nincs ilyen szerverünk'));
+                break;
+            }
             $revision  = $_GET['revision'];
-            if(!in_array($server, $backupPc->getRevisionsList($server))) echo 0;
-            
-            echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup));
+            $revisions = $backupPc->getRevisionsList($server);
+            $flag = 0;
+            if($revisions) {
+                foreach($revisions as $rev) {
+                    if($rev['number'] === $revision) {
+                        $flag = 1;
+                        break;
+                    }
+                }
+            }
+            if(!$flag) {
+                echo $backupPc->toJson(array('error'=>'Nincs ilyen revizió'));
+                break;
+            }
+            $backup = $_GET['backup'];
+            //echo $backup; die;
+            if(empty($backup)) {
+                echo $backupPc->toJson(array('error'=>'Nincs backup megadva'));
+                break;
+            }
+            echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup.'.sql.gz'));
             break;
         default:
             echo 0;

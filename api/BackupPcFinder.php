@@ -41,7 +41,8 @@
             // mivel a FilesystemIterator csak 5.3-as php-ban van benne. 
             // a DirectoryIteratorral meg csak ugy lehetne eldonteni, hogy bejarjuk az adott revizio konyvtarat, ami nagyon eroforrasigenyes
             // ezert mara a paraszt emgoldas
-            //return file_exists($file);            
+            //return file_exists($file);  
+                     
             return $this->iterator ? $this->iterator->isDir() || $this->iterator->isFile() : file_exists($this->absolutePath);
         }
     }
