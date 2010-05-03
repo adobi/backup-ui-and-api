@@ -1,5 +1,5 @@
 <?php
-
+    // regi api
         $what = $_GET['what'];
 
         $flag = 1;
