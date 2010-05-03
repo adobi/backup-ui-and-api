@@ -9,8 +9,8 @@
     require_once 'BackupPc.php';
     
     $backupPcConfig = new BackupPcConfig(array(
-        'path_to_tarhely_backups' => '/var/lib/backuppc/pc/',
-        'path_to_mysql_backups' => '/var/lib/backuppc/sqlpackup/'
+        //'path_to_tarhely_backups' => '/var/lib/backuppc/pc/',
+        //'path_to_mysql_backups' => '/var/lib/backuppc/sqlpackup/'
     ));
     $backupPc = new BackupPc($type, $backupPcConfig);
 
@@ -31,6 +31,7 @@
         case 'backup-exists':
             
             $server  = $_GET['server'];
+            
             if(!in_array($server, $backupPc->getServersList())) {
                 echo $backupPc->toJson(array('error'=>'Nincs ilyen szerverünk'));
                 break;
@@ -50,18 +51,21 @@
                 echo $backupPc->toJson(array('error'=>'Nincs ilyen revizió'));
                 break;
             }
-            $backup = urldecode($_GET['backup']);
-            //echo $backup; die;
+            if($type === 'mysql')
+                $backup = $server.'.'.urldecode($_GET['backup']).'.'.$revision.'.sql.gz';
+            else 
+                $backup = urldecode($_GET['backup']);
+            
             if(empty($backup)) {
                 echo $backupPc->toJson(array('error'=>'Nincs backup megadva'));
                 break;
             }
-            if($type == 'mysql') {
-                echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup.'.sql.gz'));
-            }
-            else {
+//            if($type == 'mysql') {
+//                echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup));
+//            }
+//            else {
                 echo $backupPc->toJson($backupPc->isThereBackup($server, $revision, $backup));
-            }
+//            }
             break;
         default:
             echo 0;

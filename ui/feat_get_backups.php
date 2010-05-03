@@ -1,18 +1,17 @@
 <?php
 	header('Content-Type: text/html; charset=utf-8');
 	
-	include_once("../../db_inc/database.php");
-    require_once '../client/BackupPcApiConfig.php';
-    require_once '../client/BackupPcApi.php';
+	include_once("db_inc/database.php");
+	require_once 'backuppc-client/BackupPcApiConfig.php';
+	require_once 'backuppc-client/BackupPcApi.php';
 	
 	if(isset($_GET['type']) && in_array($_GET['type'], array('tarhely', 'mysql'))) {
 	    
 	    $type = $_GET['type'];
 	    
-	    require_once '../client/BackupPcApiConfig.php';
-	    require_once '../client/BackupPcApi.php';
-	    
-	    $config = new BackupPcApiConfig();
+	    $config = new BackupPcApiConfig(array(
+			'api_url'=>'http://backuppc:wsbackup@10.0.3.106/backuppc/api.php'
+		));
 	    $api = new BackupPcApi($config);
 	    
 	    $requestParams = array();
@@ -104,7 +103,7 @@
 	<head>
 		<title>Backup visszaállítás</title>
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
-        <link rel="stylesheet" href="backup.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="feat_get_backups.css" type="text/css" media="screen" charset="utf-8" />
         
 		<script type="text/javascript" src = "http://code.jquery.com/jquery-1.4.min.js"></script>
 		

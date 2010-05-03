@@ -4,9 +4,17 @@
         
         private $config;
         
-        public function __construct($config) {
+        public function __construct($config = null) {
             
-            $this->config = $config->get();
+            if(is_null($config)) {
+
+                $bpConfig = new BackupPcConfig();
+                $this->config = $bpConfig->get();
+            }
+            else {
+
+                $this->config = $config->get();
+            }
         }
         
         public function get($params) {
