@@ -23,7 +23,7 @@
             }
             
             $this->type = $type;
-            
+
             if(is_null($config)) {
                 
                 $bpConfig = new BackupPcConfig();

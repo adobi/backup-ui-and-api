@@ -8,8 +8,12 @@
     require_once 'BackupPcConfig.php';
     require_once 'BackupPc.php';
     
-    $backupPc = new BackupPc($type);
-    
+    $backupPcConfig = new BackupPcConfig(array(
+        'path_to_tarhely_backups' => '/var/lib/backuppc/pc/',
+        'path_to_mysql_backups' => '/var/lib/backuppc/sqlpackup/'
+    ));
+    $backupPc = new BackupPc($type, $backupPcConfig);
+
     switch($request) {
         
         case 'servers-list':

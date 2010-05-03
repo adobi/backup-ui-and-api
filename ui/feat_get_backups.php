@@ -1,7 +1,7 @@
 <?php
 	header('Content-Type: text/html; charset=utf-8');
 	
-	//include_once("db_inc/database.php");
+	include_once("../../db_inc/database.php");
     require_once '../client/BackupPcApiConfig.php';
     require_once '../client/BackupPcApi.php';
 	
@@ -82,14 +82,14 @@
 
         		$jsonParams = json_encode($params);
         		
-        		/*
+        		
                 $szolgadd = new Table($DB['szolgadd']);
                 $szolgadd->_server = "106";
                 $szolgadd->_funct = 'restore_init';
                 $szolgadd->_param1 = $jsonParams;
                 
                 $szolgadd->insertObj();
-                */
+                
     		    
     		}
 		}
