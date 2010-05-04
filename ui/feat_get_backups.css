@@ -196,9 +196,9 @@ form input[type=submit]:active { top: 1px; }
 	/*margin-left:56px;*/
 	padding:10px;
 	font-style:italic;
-	background:#B8D30B;
+	background:#ffff99;
 	font-size:14px;
-	border:1px solid #A8BF0B;
+	border:1px solid #ffcc66;
 	-moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;
 }
 #errors {

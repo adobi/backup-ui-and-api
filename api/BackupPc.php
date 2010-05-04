@@ -117,13 +117,21 @@
             switch($this->type) {
                 
                 case 'tarhely':
+                    /*
+                        mivel a backuppc mindent f-es prefixekkel tarol, valahogy ossze kell hakolni a $backup-bol a megfelelo formatumot
+                    */
+                    
                     
                     $directory = $this->config['path_to_tarhely_backups'] . 
                                  $server . 
                                  DIRECTORY_SEPARATOR . 
                                  $revision .
                                  DIRECTORY_SEPARATOR . 
-                                 $backup;
+                                 'fhome'.
+                                 DIRECTORY_SEPARATOR .
+                                 implode("/", array_map(array('BackupPc', 'addF'), explode("/", $backup)));
+                                 
+                    echo $directory;
                     break;
                 case 'mysql':
                     
@@ -140,6 +148,17 @@
             $finder = new BackupPcFinder($directory);
                     
             return array('result' => $finder->exists()); 
+        }
+        
+        /**
+         * mivel a backuppc minden konyvtar neve ele egy f betut pakol, ezert amikor keressuk, akkor eloallitjuk ezt a formatumot
+         *
+         * @param string $string 
+         * @return string
+         */
+        public function addF($string) {
+            
+            return 'f'.$string;
         }
         
         public function toJson($array) {

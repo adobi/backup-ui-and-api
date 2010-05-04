@@ -12,7 +12,7 @@
 	    $type = $_GET['type'];
 	    
 	    $config = new BackupPcApiConfig(array(
-			'api_url'=>'http://backuppc:wsbackup@10.0.3.106/backuppc/api.php'
+			//'api_url'=>'http://backuppc:wsbackup@10.0.3.106/backuppc/api.php'
 		));
 	    $api = new BackupPcApi($config);
 	    
