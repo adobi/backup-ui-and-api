@@ -5,6 +5,8 @@
 	require_once '../client/BackupPcApiConfig.php';
 	require_once '../client/BackupPcApi.php';
 	
+    //var_dump(0 == 'no'); die;
+    
 	if(isset($_GET['type']) && in_array($_GET['type'], array('tarhely', 'mysql'))) {
 	    
 	    $type = $_GET['type'];

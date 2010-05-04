@@ -114,7 +114,7 @@ h1 a.type:active {
     display:block; padding: 5px;
     width:140px;
     margin-bottom:3px;
-    /*-moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;*/
+    /*-moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;86CAD5*/
 }
 #sidebar ul li a:hover {background:#86CAD5;color:#fff;text-decoration:none;}
 #sidebar ul li a:active {top:1px;}
