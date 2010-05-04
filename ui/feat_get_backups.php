@@ -1,9 +1,9 @@
 <?php
 	header('Content-Type: text/html; charset=utf-8');
 	
-	include_once("db_inc/database.php");
-	require_once 'backuppc-client/BackupPcApiConfig.php';
-	require_once 'backuppc-client/BackupPcApi.php';
+	//include_once("db_inc/database.php");
+	require_once '../client/BackupPcApiConfig.php';
+	require_once '../client/BackupPcApi.php';
 	
 	if(isset($_GET['type']) && in_array($_GET['type'], array('tarhely', 'mysql'))) {
 	    
@@ -123,7 +123,10 @@
         			<ul>
     					<?php foreach($servers as $server) : ?>
     						
-    						<li><a href="?type=<?=$type?>&amp;server=<?= $server; ?>" class = "server <?= isset($_GET['server']) && $_GET['server'] == $server ? 'selected-server' : '' ?>" title = "<?= $server; ?>">&raquo;&nbsp;<?= $server ?></a></li>
+    						<li>
+    						    <a href="?type=<?=$type?>&amp;server=<?= $server; ?>" class = "server <?= isset($_GET['server']) && $_GET['server'] == $server ? 'selected-server' : '' ?>" title = "<?= $server; ?>">&raquo;&nbsp;<?= $server ?></a>
+                                <span class = "hidden"></span>
+    						</li>
     						
     					<?php endforeach; ?>
         			</ul>
@@ -213,6 +216,25 @@
 				if(jQuery.trim(content.html()) === '') {
 				    content.hide();
 				}
+				
+				var sidebarLis = $('#sidebar').find('li');
+				
+				$(sidebarLis).each(function(idx, element) {
+				    var a = $(element).find('a');
+				    
+				    if(a.is('.selected-server')) $(element).find('.hidden:first').addClass('arrow arrow-selected');
+				    else 
+    				    a.hover(
+    				        function() {
+        				        var arrow = $(element).find('.hidden:first');
+        				        arrow.addClass('arrow');
+        				    },
+        				    function() {
+        				        var arrow = $(element).find('.hidden:first');
+        				        arrow.removeClass('arrow');
+        				    }
+    				    ); 
+				});
 			});		
 		
 		</script>
