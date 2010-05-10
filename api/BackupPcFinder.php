@@ -32,6 +32,7 @@
                     $directories[] = $item->getFilename();
                 }
             }
+            sort($directories, SORT_STRING);
             
             return $directories;
         }
