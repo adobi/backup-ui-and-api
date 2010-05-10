@@ -29,12 +29,14 @@
                 
                 if($item->isDir() && !$item->isDot()) {
                     
-                    $directories[] = $item->getFilename();
+                    $dir = $item->getFilename();
+                    $directories[$dir] = strtolower($dir);
                 }
             }
-            sort($directories, SORT_STRING);
             
-            return $directories;
+            asort($directories, SORT_STRING);
+            
+            return array_keys($directories);
         }
         
         public function exists() {
