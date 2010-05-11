@@ -41,7 +41,7 @@
             $flag = 0;
             if($revisions) {
                 foreach($revisions as $rev) {
-                    if($rev['number'] === $revision) {
+                    if($rev['number'] == $revision) {
                         $flag = 1;
                         break;
                     }
